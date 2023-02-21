@@ -1,0 +1,20 @@
+<div class="container home-container">
+  <div
+    class="btn-group-vertical buttons-as-nav" role="group" aria-label="Vertical button group"
+  >
+    <button class="btn btn-dark" *ngIf="this.authService.isLoggedIn" routerLinkActive="active" routerLink="/products">
+      <h1>Ver la carta</h1>
+    </button>
+    <button class="btn btn-dark" *ngIf="this.authService.isLoggedIn" (click)="profile()">
+      <h1>Mi cuenta</h1>
+    </button>
+    <button class="btn btn-dark" *ngIf="!this.authService.isLoggedIn" routerLinkActive="active" routerLink="/log-in">
+        <h1>Iniciar sesión</h1>
+    </button>
+    <button class="btn btn-dark" *ngIf="!this.authService.isLoggedIn" routerLinkActive="active" routerLink="/sign-up">
+        <h1>Registrarme</h1>
+    </button>
+  </div>
+
+  <img class="spinning-pizza" src="https://cdn-icons-png.flaticon.com/512/9726/9726306.png" alt="pizza air rotation">
+</div>

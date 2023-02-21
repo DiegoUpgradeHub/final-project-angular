@@ -1,0 +1,33 @@
+.user-profile-page-box {
+  display: flex;
+  flex-flow: column wrap;
+  justify-content: center;
+  align-items: center;
+}
+
+
+.btn-text {
+  margin: 0px;
+  font-family: Helvetica, sans-serif;
+  text-transform: uppercase;
+  color: white;
+}
+
+.user-profile-info {
+  padding: 5px;
+  margin: 20px 0;
+  // width: 400px;
+  max-width: 540px;
+  // display: flex;
+  // flex-flow: row wrap;
+  // justify-content: start;
+  // align-items: center;
+}
+
+div.card-body {
+  margin: 0 auto;
+}
+
+.profile-image {
+  max-width: 100px;
+}

@@ -1,0 +1,36 @@
+<!-- Menu para móviles -->
+<!-- Example single danger button -->
+<div class="hide-dropdown-menu" >
+  <a class="logo" routerLinkActive="active" routerLink="home">
+    <img width="150px" src="http://mammamiapizzeria.es/wp-content/uploads/2015/09/Logo_MammaMia-pizza-big.png" alt="pizza logo">
+  </a>
+  <button type="button" class="btn btn-success dropdown-toggle menu-button" data-bs-toggle="dropdown" aria-expanded="false" *ngIf="this.authService.isLoggedIn">
+    <p class="btn-text">Menú</p>
+  </button>
+  <ul class="dropdown-menu">
+    <li><a class="dropdown-item" *ngIf="this.authService.isLoggedIn" routerLinkActive="active" routerLink="home">Home</a></li>
+    <li><a class="dropdown-item" *ngIf="this.authService.isLoggedIn" routerLinkActive="active" routerLink="products">Ver la carta</a></li>
+    <li><a class="dropdown-item" *ngIf="this.authService.isLoggedIn" (click)="profile()">Mi cuenta</a></li>
+    <li><hr class="dropdown-divider"></li>
+    <li><a class="dropdown-item" *ngIf="this.authService.isLoggedIn" (click)="logout()">Cerrar sesión</a></li>
+  </ul>
+</div>
+
+
+<!-- Menu para escritorio -->
+<div class="hide-menu">
+  <a class="logo" routerLinkActive="active" routerLink="home">
+    <img width="150px" src="http://mammamiapizzeria.es/wp-content/uploads/2015/09/Logo_MammaMia-pizza-big.png" alt="pizza logo">
+  </a>
+  <div class="btn-group">
+    <button class="btn btn-success" *ngIf="this.authService.isLoggedIn" routerLinkActive="active" routerLink="home">
+      <p class="btn-text">Home</p>
+    </button>
+    <button class="btn btn-success" *ngIf="this.authService.isLoggedIn" routerLinkActive="active" routerLink="products">
+      <p class="btn-text">Ver la carta</p>
+    </button>
+    <button class="btn btn-success" *ngIf="this.authService.isLoggedIn" (click)="profile()">
+      <p class="btn-text">Mi cuenta</p>
+    </button>
+  </div>
+</div>

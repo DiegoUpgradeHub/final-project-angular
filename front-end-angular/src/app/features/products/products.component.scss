@@ -1,0 +1,232 @@
+.products-page-box {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  width: 100%;
+  margin: 0;
+}
+.admin-box {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  width: 100%;
+
+  .create-product-btn {
+    width: 260px;
+    margin-left: 20px;
+    height: 20px;
+    border-radius: 7px;
+    border: none;
+    background: rgb(255, 185, 9);
+    .btn-text {
+      margin: -10px;
+      font-family: Helvetica, sans-serif;
+      text-transform: uppercase;
+      color: white;
+    }
+  }
+}
+
+@media screen and (max-width: 1050px) {
+  .my-order-box {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: left;
+    align-items: center;
+    width: 100%;
+    max-width: 1050px;
+  }
+}
+@media screen and (min-width: 1050px) {
+  .my-order-box {
+    width: 600px;
+    margin: 25px 0;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: left;
+    align-items: center;
+  }
+}
+thead tr {
+  text-transform: uppercase;
+  font-weight: bold;
+}
+tfoot tr {
+  text-transform: uppercase;
+  font-weight: bold;
+}
+//Bloque del listado de productos
+//Phone
+// .product-box {
+//   display: flex;
+//   flex-flow: column wrap;
+//   justify-content: center;
+//   align-items: center;
+// }
+
+h1 {
+  margin: 0 auto;
+  width: 100%;
+  max-width: 1050px;
+  border-top: solid darkolivegreen 5px;
+  text-transform: uppercase;
+}
+@media screen and (max-width: 1050px) {
+  .products-list  {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: start;
+    align-items: baseline;
+    width: 100%;
+    overflow-x: scroll;
+    padding: 0;
+    margin: 0 auto;
+    // background: #fabada;
+  }
+}
+//Desktop
+@media screen and (min-width: 1050px) {
+  .products-list {
+    width: 100%;
+    max-width: 1050px;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    align-items: center;
+    // background: #fabada;
+  }
+}
+
+.productCard {
+  // position: relative;
+  display: flex;
+  flex-flow: column wrap;
+  justify-content: center;
+  align-items: center;
+  padding: 15px;
+  border: none;
+  border-radius: 2rem;
+  width: 300px;
+  margin: 5px;
+  background: white;
+}
+.productCard:hover {
+  box-shadow: 0px 0px 54px -18px rgba(62,69,63,0.45);
+}
+
+.circleImg {
+  height: 150px;
+  // width: 150px;
+  object-fit: cover;
+  // border-radius: 75px;
+}
+
+.products-info-box {
+  display: flex;
+  flex-flow: column wrap;
+  justify-content: center;
+  align-items: center;
+  width: 275px;
+  // padding-right: 2px;
+  margin-top: -12px;
+  img {
+    width: 20px;
+    margin-right: 7px;
+  }
+  background: white;
+}
+.product-id {
+  font-size: 12px;
+}
+.product-name {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: left;
+  align-items:first baseline;
+  width: 100%;
+  margin: -15px;
+  p {
+    font-size: 25px;
+    font-weight: bold;
+    text-transform: capitalize;
+  }
+}
+.product-ingredients-price {
+  display: flex;
+  flex-flow: column wrap;
+  justify-content: left;
+  width: 100%;
+  p {
+    margin: 0;
+  }
+  .product-ingredients {
+    font-size: 12px;
+    font-style: italic;
+    text-transform: lowercase;
+  }
+  .product-price {
+    font-size: 18px;
+    font-weight: 800;
+    margin-bottom: 5px;
+  }
+}
+
+.select-product-btn {
+  width: 100%;
+  height: 20px;
+  border-radius: 7px;
+  border: none;
+  background: darkolivegreen;
+  color: white;
+  .btn-text {
+    margin: -10px;
+    font-family: Helvetica, sans-serif;
+    text-transform: uppercase;
+    color: white;
+  }
+}
+
+.admin-buttons-on-card {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: right;
+  align-items: center;
+
+  z-index: 99;
+  width: 100%;
+  // margin-bottom: -25px;
+
+  // p {
+  //   margin: 0 auto;
+  //   font-family: Helvetica, sans-serif;
+  //   text-transform: uppercase;
+  //   color: white;
+  // }
+  .btn-text {
+    margin: -10px;
+    font-family: Helvetica, sans-serif;
+    text-transform: uppercase;
+    color: white;
+  }
+  .edit-product-btn {
+    // text-align: center;
+    width: 100px;
+    height: 20px;
+    border-radius: 7px;
+    border: none;
+    background: darkblue;
+    // color: white;
+
+  }
+  .delete-product-btn {
+    // text-align: center;
+    background: red;
+    // color: white;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    border: none;
+    font-weight: 900;
+    margin: 0 10px
+  }
+}

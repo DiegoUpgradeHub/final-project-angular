@@ -1,0 +1,56 @@
+<div class="create-product-page">
+  <button
+    routerLinkActive="active"
+    routerLink="/products"
+    class="btn btn-dark"
+  >
+    <p class="btn-text">Atrás</p>
+  </button>
+  <div class="form-box">
+    <form
+      [formGroup]="editForm" (ngSubmit)="editingProduct()"
+    >
+      <h3>Editar producto</h3>
+      <div class="form-floating mb-3">
+        <input type="text" class="form-control" formControlName="_id" placeholder="Escribe el Id del producto" required id="floatingInput">
+        <label for="floatingInput">ID del producto</label>
+      </div>
+      <div class="form-floating mb-3">
+        <input type="text" class="form-control" formControlName="name" placeholder="Escribe el nombre del producto" required id="floatingInput">
+        <label for="floatingInput">Nombre</label>
+      </div>
+      <div class="form-floating mb-3">
+        <input type="number" class="form-control" formControlName="price" placeholder="Escribe el precio del producto" required id="floatingInput">
+        <label for="floatingInput">Precio</label>
+      </div>
+      <div class="form-floating mb-3">
+        <input type="text" class="form-control" formControlName="ingredients" placeholder="Escribe los ingredientes del producto" required id="floatingInput">
+        <label for="floatingInput">Ingredientes</label>
+      </div>
+      <div class="form-floating mb-3">
+        <input type="text" class="form-control" formControlName="image" placeholder="Escribe la URL de la imagen del producto" required id="floatingInput">
+        <label for="floatingInput">Imagen</label>
+      </div>
+      <div class="form-floating mb-3">
+        <div class="input-group mb-3">
+          <label for="input-group-text">Categoría</label>
+          <select class="form-select form-control" formControlName="vegetarian" aria-label="Default select example" required>
+            <option value="Pizzas">Pizzas</option>
+            <option value="Pastas">Pastas</option>
+            <option value="Bebidas">Bebidas</option>
+          </select>
+        </div>
+      </div>
+      <div class="form-floating mb-3">
+        <div class="input-group mb-3">
+          <label for="input-group-text">¿Es vegetariano?</label>
+          <select class="form-select form-control" formControlName="vegetarian" aria-label="Default select example" required>
+            <option value="true">true</option>
+            <option value="false">false</option>
+          </select>
+        </div>
+      </div>
+      <button type="submit" class="btn btn-success">Editar producto</button>
+    </form>
+  </div>
+</div>

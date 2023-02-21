@@ -1,0 +1,34 @@
+<div class="signin-product-page">
+  <form class="form-signin" [formGroup]="signinForm" (ngSubmit)="loginUser()">
+      <h3>Please sign in</h3>
+      <div>
+          <label>Email</label>
+          <input type="email" class="form-control" formControlName="email" placeholder="Enter email" required>
+          <div
+            [hidden]="signinForm.valid || signinForm.pristine"
+            class="alert alert-danger"
+          >
+            Email no identificado.
+          </div>
+      </div>
+      <div>
+          <label>Password</label>
+          <input type="password" class="form-control" formControlName="password" placeholder="Password">
+          <div
+            [hidden]="signinForm.valid || signinForm.pristine"
+            class="alert alert-danger"
+          >
+            Contraseña incorrecta.
+          </div>
+      </div>
+      <button type="submit" class="btn btn-success">
+        Sign in
+      </button>
+      <div
+        [hidden]="signinForm.valid || signinForm.pristine"
+        class="alert alert-danger"
+      >
+        Contraseña incorrecta.
+      </div>
+  </form>
+</div>

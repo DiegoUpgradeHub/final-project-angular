@@ -1,0 +1,21 @@
+<div class="create-product-page">
+  <button
+    routerLinkActive="active"
+    routerLink="/products"
+    class="btn btn-dark"
+  >
+    <p class="btn-text">Atrás</p>
+  </button>
+  <div class="form-box">
+    <form
+      [formGroup]="deleteForm" (ngSubmit)="deletingProduct()"
+    >
+      <h3>Eliminar producto</h3>
+      <div class="form-floating mb-3">
+        <input type="text" class="form-control" formControlName="_id" placeholder="Escribe el Id del producto" required id="floatingInput">
+        <label for="floatingInput">ID del producto</label>
+      </div>
+      <button type="submit" class="btn btn-danger">Eliminar producto</button>
+    </form>
+  </div>
+</div>

@@ -1,0 +1,64 @@
+
+<div class="user-profile-page-box">
+  <button
+    (click)="logout()"
+    role="button"
+    *ngIf="this.authService.isLoggedIn"
+    type="button" class="btn btn-danger logoutBtn"
+  >
+    <p class="btn-text">Cerrar sesión</p>
+  </button>
+
+  <!-- <div class="card mb-3 user-profile-info">
+    <img class="profile-image" src="https://cdn-icons-png.flaticon.com/512/2102/2102647.png" class="card-img-top" alt="profile-image">
+    <div class="list-group list-group-flush">
+      <h2 class="list-group-item">Perfil del usuario</h2>
+      <p class="list-group-item" [hidden]="this.currentUser.role !== 'Admin'">Rol del usuario: {{this.currentUser?.role}}</p>
+      <p class="list-group-item">Nombre: {{this.currentUser?.name}}</p>
+      <p class="list-group-item">Correo: {{this.currentUser?.email}}</p>
+    </div>
+  </div> -->
+  <div class="card user-profile-info" style="max-width: 540px;">
+    <div class="row g-0">
+      <div class="col-4">
+        <img class="img-fluid rounded-start profile-image" src="https://cdn-icons-png.flaticon.com/512/2102/2102647.png" class="card-img-top" alt="profile-image">
+      </div>
+      <div class="col-8">
+        <div class="card-body">
+          <h5 class="card-title">Perfil del usuario</h5>
+          <p class="card-text" [hidden]="this.currentUser.role !== 'Admin'">Rol del usuario: {{this.currentUser?.role}}</p>
+          <p class="card-text"><small class="text-muted">Nombre: {{this.currentUser?.name}}</small></p>
+          <p class="card-text"><small class="text-muted">Correo: {{this.currentUser?.email}}</small></p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="btn-group" role="group" aria-label="Vertical button group">
+    <button
+      type="button" class="btn btn-dark"
+      [hidden]="this.currentUser.role !== 'Admin'"
+      routerLinkActive="active"
+      routerLink="/create-product"
+    >
+      <p class="btn-text">Crear producto</p>
+    </button>
+    <button
+      type="button" class="btn btn-dark"
+      [hidden]="this.currentUser.role !== 'Admin'"
+      routerLinkActive="active"
+      routerLink="/edit-product"
+    >
+      <p class="btn-text">Editar producto</p>
+    </button>
+    <button
+      type="button" class="btn btn-dark"
+      [hidden]="this.currentUser.role !== 'Admin'"
+      routerLinkActive="active"
+      routerLink="/delete-product"
+    >
+      <p class="btn-text">Eliminar producto</p>
+    </button>
+  </div>
+</div>
+

@@ -1,0 +1,89 @@
+//mobile first
+@media screen and (max-width: 600px) {
+  .hide-dropdown-menu {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+    align-items: center;
+    margin: 35px;
+  }
+  .menu-button {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-around;
+    align-content:center;
+    align-items: center;
+    width: 100px;
+    height: 30px;
+    .btn-text {
+      margin: -10px;
+      padding: 10px;
+      font-family: Helvetica, sans-serif;
+      text-transform: uppercase;
+      color: white;
+    }
+  }
+}
+@media screen and (min-width: 600px) {
+  .hide-dropdown-menu {
+    display: none;
+  }
+}
+
+//Desktop version
+@media screen and (max-width: 600px) {
+  .hide-menu {
+    display: none;
+  }
+}
+@media screen and (min-width: 600px) {
+  .hide-menu {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    .logo {
+      margin-right: 50px;
+    }
+    .btn-text {
+      margin: -10px;
+      padding: 10px;
+      font-family: Helvetica, sans-serif;
+      text-transform: uppercase;
+      color: white;
+    }
+  }
+}
+
+
+p:hover {
+  cursor: pointer;
+}
+
+// .logoutBtn {
+//   display: flex;
+//   flex-flow: row wrap;
+//   justify-content: right;
+//   align-items: center;
+//   margin-bottom: -50px;
+//   margin-right: 20px;
+//   margin-top: 20px;
+// }
+
+
+//First mobile phone
+.logo {
+  width: 150px;
+}
+.logo:hover {
+  animation: rotation 0.2s 1 linear;
+}
+@keyframes rotation {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(359deg);
+  }
+}

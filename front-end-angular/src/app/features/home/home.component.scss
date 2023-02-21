@@ -1,0 +1,30 @@
+.buttons-as-nav {
+  display: flex;
+  flex-flow: column wrap;
+  justify-content: center;
+  align-items: center;
+  margin: 100px 0;
+  width: 100%;
+}
+
+.home-container {
+  display: flex;
+  flex-flow: column wrap;
+  justify-content: center;
+  align-items: center;
+  max-width: 600px;
+}
+
+.spinning-pizza {
+  animation: rotation 8s infinite linear;
+  width: 300px;
+}
+
+@keyframes rotation {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(359deg);
+  }
+}

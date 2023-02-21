@@ -1,0 +1,252 @@
+<div class="products-page-box">
+
+  <div class="admin-box">
+    <p
+      [hidden]="this.currentUser.role !== 'Admin'"
+    >
+      {{this.currentUser.name}} (Administrador)
+    </p>
+    <button
+      [hidden]="this.currentUser.role !== 'Admin'"
+      class="create-product-btn"
+      routerLinkActive="active"
+      routerLink="/create-product"
+    >
+        <p class="btn-text">Crear producto</p>
+    </button>
+  </div>
+
+  <div
+    class="my-order-box container text-left"
+    [hidden]="this.currentUser.role === 'Admin'"
+  >
+    <h2>Mi pedido</h2>
+    <table class="table table-hover">
+      <thead>
+        <tr>
+          <td class="col-6">Producto</td>
+          <td class="col-4">Precio</td>
+          <td class="col-2"></td>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let order of orders; let i = index">
+          <td >{{order.name}}</td>
+          <td >{{order.price | currency:'€ ' }}</td>
+          <td style="color: red;font-weight:bold;" (click)="remove(i, order.price)" class="col-1">X</td>
+        </tr>
+      </tbody>
+      <tfoot>
+        <tr>
+          <td >Total:</td>
+          <td >{{priceSum | currency:'€ ' }}</td>
+          <td ></td>
+        </tr>
+      </tfoot>
+    </table>
+  </div>
+
+
+  <h1>Pizzas</h1>
+  <ul class="products-list">
+    <li *ngFor="let product of productsList; let index = index">
+      <div
+        *ngIf="product.category === 'Pizzas'"
+        class="productCard"
+      >
+        <div class="admin-buttons-on-card">
+          <button
+            class="edit-product-btn"
+            [hidden]="this.currentUser.role !== 'Admin'"
+            routerLinkActive="active"
+            routerLink="/edit-product/{{product.name}}"
+          >
+            <p class="btn-text">Editar</p>
+          </button>
+          <!-- <button
+            class="delete-product-btn"
+            [hidden]="this.currentUser.role !== 'Admin'"
+            routerLinkActive="active"
+            routerLink="/delete-product/{{product._id}}"
+          >
+            <p class="btn-text">X</p>
+          </button> -->
+          <button
+            class="delete-product-btn"
+            data-bs-toggle="modal"
+            data-bs-target="#exampleModal"
+            [hidden]="this.currentUser.role !== 'Admin'"
+          >
+            <p class="btn-text">X</p>
+          </button>
+        </div>
+        <div class="imgBox">
+          <img src="{{product.image}}" alt="{{product.name}}" class="circleImg">
+        </div>
+        <div class="products-info-box">
+          <p
+            [hidden]="this.currentUser.role !== 'Admin'"
+            class="product-id"
+          >
+            id: {{product._id}}
+          </p>
+          <div class="product-name">
+            <img
+              *ngIf="product.vegetarian"
+              src="https://cdn-icons-png.flaticon.com/512/1297/1297867.png"
+              alt="vegetarian"
+            />
+            <p>{{product.name}}</p>
+          </div>
+          <div class="product-ingredients-price">
+            <p class="product-ingredients">{{product.ingredients}}</p>
+            <p class="product-price">{{product.price | currency:'€ ' }}</p>
+          </div>
+        </div>
+        <button
+          class="select-product-btn"
+          [hidden]="this.currentUser.role === 'Admin'"
+          (click)="selectProduct(product.name, product.price)"
+        >
+          <p class="btn-text">Seleccionar</p>
+        </button>
+      </div>
+    </li>
+  </ul>
+
+  <h1>Pastas</h1>
+  <ul class="products-list">
+    <li *ngFor="let product of productsList; let index = index">
+      <div
+        *ngIf="product.category === 'Pastas'"
+        class="productCard"
+      >
+        <div class="admin-buttons-on-card">
+          <button
+            class="edit-product-btn"
+            [hidden]="this.currentUser.role !== 'Admin'"
+            routerLinkActive="active"
+            routerLink="/edit-product/{{product.name}}"
+          >
+            <p class="btn-text">Editar</p>
+          </button>
+          <button
+            class="delete-product-btn"
+            [hidden]="this.currentUser.role !== 'Admin'"
+            routerLinkActive="active"
+            routerLink="/delete-product/{{product._id}}"
+          >
+            <p class="btn-text">X</p>
+          </button>
+        </div>
+        <div class="imgBox">
+          <img src="{{product.image}}" alt="{{product.name}}" class="circleImg">
+        </div>
+        <div class="products-info-box">
+          <p
+            [hidden]="this.currentUser.role !== 'Admin'"
+            class="product-id"
+          >
+            id: {{product._id}}
+          </p>
+          <div class="product-name">
+            <img
+              *ngIf="product.vegetarian"
+              src="https://cdn-icons-png.flaticon.com/512/1297/1297867.png"
+              alt="vegetarian"
+            />
+            <p>{{product.name}}</p>
+          </div>
+          <div class="product-ingredients-price">
+            <p class="product-ingredients">{{product.ingredients}}</p>
+            <p class="product-price">{{product.price | currency:'€ ' }}</p>
+          </div>
+        </div>
+        <button
+          class="select-product-btn"
+          [hidden]="this.currentUser.role === 'Admin'"
+          (click)="selectProduct(product.name, product.price)"
+        >
+          <p class="btn-text">Seleccionar</p>
+        </button>
+      </div>
+    </li>
+  </ul>
+
+  <h1>Bebidas</h1>
+  <ul class="products-list">
+    <li *ngFor="let product of productsList; let index = index">
+      <div
+        *ngIf="product.category === 'Bebidas'"
+        class="productCard"
+      >
+        <div class="admin-buttons-on-card">
+          <button
+            class="edit-product-btn"
+            [hidden]="this.currentUser.role !== 'Admin'"
+            routerLinkActive="active"
+            routerLink="/edit-product/{{product.name}}"
+          >
+            <p class="btn-text">Editar</p>
+          </button>
+          <button
+            class="delete-product-btn"
+            [hidden]="this.currentUser.role !== 'Admin'"
+            routerLinkActive="active"
+            routerLink="/delete-product/{{product._id}}"
+          >
+            <p class="btn-text">X</p>
+          </button>
+        </div>
+        <div class="imgBox">
+          <img src="{{product.image}}" alt="{{product.name}}" class="circleImg">
+        </div>
+        <div class="products-info-box">
+          <p
+            [hidden]="this.currentUser.role !== 'Admin'"
+            class="product-id"
+          >
+            id: {{product._id}}
+          </p>
+          <div class="product-name">
+            <p>{{product.name}}</p>
+          </div>
+          <div class="product-ingredients-price">
+            <p class="product-ingredients">{{product.ingredients}}</p>
+            <p class="product-price">{{product.price | currency:'€ ' }}</p>
+          </div>
+        </div>
+        <button
+          class="select-product-btn"
+          [hidden]="this.currentUser.role === 'Admin'"
+          (click)="selectProduct(product.name, product.price)"
+        >
+          <p class="btn-text">Seleccionar</p>
+        </button>
+      </div>
+    </li>
+  </ul>
+</div>
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-body">
+        <form
+          [formGroup]="deleteForm" (ngSubmit)="deletingProduct()"
+        >
+          <h3>Eliminar producto</h3>
+          <div class="form-floating mb-3">
+            <input type="text" class="form-control" formControlName="_id" placeholder="Escribe el Id del producto" required id="floatingInput">
+            <label for="floatingInput">ID del producto</label>
+          </div>
+          <button type="submit" class="btn btn-danger">Eliminar producto</button>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+      </div>
+    </div>
+  </div>
+</div>
